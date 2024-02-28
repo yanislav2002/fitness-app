@@ -1,16 +1,13 @@
 import './App.css';
+import RegisterForm from './components/forms/RegisterForm/RegisterForm';
+import LoginForm from './components/forms/LoginForm/LoginForm';
+import Navigation from './components/Navigation/Navigation';
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <header className="app-header">
-        <ul className='header-list'>
-          <li><a href="#" className='navigation-link'>Home</a></li>
-          <li><a href="#" className='navigation-link'>Login</a></li>
-          <li><a href="#" className='navigation-link'>Sign in</a></li>
-          <li><a href="#" className='navigation-link'>Logout</a></li>
-        </ul>
-      </header>
+      
+      <Navigation />
 
       <main>
         <section className="home-title">
@@ -23,6 +20,10 @@ function App(): JSX.Element {
           <p><a href="#" className='link'>Create Plan</a></p>
           
         </section>  
+
+        <RegisterForm />
+        <LoginForm /> 
+
       </main>
     </div>
   );

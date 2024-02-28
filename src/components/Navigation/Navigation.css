@@ -1,0 +1,28 @@
+nav {
+    background: rgb(110,20,35);
+    background: linear-gradient(90deg, rgba(110,20,35,1) 0%, rgba(133,24,42,1) 50%, rgba(110,20,35,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+}
+
+nav a:hover {
+    border-bottom: solid 2px #f0ffff;
+    font-weight: 400;
+}
+
+.nav-list {
+    display: flex;
+    gap: 2em;
+}
+
+.nav-link{
+    color: #f0ffff;
+    font-size: 1.5em;
+    padding: 0.5em 0em;
+    text-decoration: none;
+    font-weight: 300;
+    transition: 0.1s ease-in-out;
+}
+
