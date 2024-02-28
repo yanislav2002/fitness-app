@@ -1,0 +1,116 @@
+select {
+    font-size: 16px;
+    padding: 0.7em 0.3em;
+    /* width: 20em; */
+    border: none;
+    border-radius: 0.5em;
+
+    background-color: #464646;
+    color: #f1eff2;
+    width: 100%;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.add-exercise {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.selects {
+    display: flex;
+    gap: 0.5em;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.create-workout-page {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+aside {
+    display: flex;
+    background-color: #373737;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2em;
+    border-radius: 0.5em;
+}
+
+form {
+    margin: 0;
+}
+
+
+
+
+
+
+.exercise-card {
+    background-color: gray;
+    display: flex;
+    width: 25em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    gap: 0.5em;
+    color: #f1eff2;
+}
+
+.exercise-rigth-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.exercise-muscle-group {
+    font-size: 14px;
+}
+
+.exercise-info {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    /* border: solid #373737  1px; */
+    /* border-radius: 0.5em; */
+    /* padding: 0.5em; */
+}
+
+.exercise-info input {
+    max-width: 3em;
+}
+
+.exercise-card>*:first-child{
+    align-self: center;
+}
+
+img {
+    max-width: 100px;
+    height: 100px;
+    border-radius: 0.5em;
+}
+
+.exercise-name {
+    font-weight: bold;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    appearance: none; 
+}
