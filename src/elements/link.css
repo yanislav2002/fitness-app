@@ -4,9 +4,8 @@
     background-color: #85182a;
     color: #f0ffff;
     font-weight: 400;
-    border-radius: 10px;
+    border-radius: 0.5em;
     transition: 0.1s ease-in-out;
-
 }
 
 .link:hover {

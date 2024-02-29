@@ -5,7 +5,7 @@ form {
     gap: 1.5em;
     width: 35em;
     border-radius: 0.5em;
-    margin: 0 auto;
+    margin: auto;
     padding: 2em 0;
     background-color: #373737;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -16,7 +16,6 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     width: 20em;
     border: none;
     border-radius: 0.5em;
-
     background-color: #464646;
     color: #f1eff2;
 }
