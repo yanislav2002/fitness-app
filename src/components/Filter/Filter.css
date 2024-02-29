@@ -1,0 +1,27 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.selects {
+    display: flex;
+    gap: 0.5em;
+    width: 100%;
+}
+
+select {
+    font-size: 16px;
+    padding: 0.7em 0.3em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #464646;
+    color: #f1eff2;
+    width: 100%;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+

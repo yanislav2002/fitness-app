@@ -3,7 +3,7 @@ import RegisterForm from './components/forms/RegisterForm/RegisterForm';
 import LoginForm from './components/forms/LoginForm/LoginForm';
 import Navigation from './components/Navigation/Navigation';
 import SummaryPanel from './components/SummaryPanel/SummaryPanel';
-import CreateWorkout from './components/forms/CreateWorkout/CreateWorkout';
+import CreateWorkoutPage from './components/pages/CreateWorkoutPage/CreateWorkoutPage';
 
 
 export default function App(): JSX.Element {
@@ -13,7 +13,7 @@ export default function App(): JSX.Element {
             <Navigation />
 
             <main>
-                <CreateWorkout />
+                <CreateWorkoutPage />
 
                 {/* <SummaryPanel /> */}
 

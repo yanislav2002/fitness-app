@@ -1,0 +1,7 @@
+aside {
+    display: flex;
+    background-color: #373737;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2em;
+    border-radius: 0.5em;
+}
