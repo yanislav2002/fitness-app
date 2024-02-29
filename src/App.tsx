@@ -5,6 +5,7 @@ import RegisterForm from './components/forms/RegisterForm/RegisterForm';
 import LoginForm from './components/forms/LoginForm/LoginForm';
 import HomePage from './components/pages/HomePage/HomePage';
 import CreateWorkoutPage from './components/pages/CreateWorkoutPage/CreateWorkoutPage';
+import ProfilePage from './components/pages/ProfilePage/ProfilePage';
 
 
 export default function App(): JSX.Element {
@@ -14,8 +15,9 @@ export default function App(): JSX.Element {
             <Navigation />
 
             <main>
-                <HomePage />
+                {/* <HomePage /> */}
                 {/* <CreateWorkoutPage /> */}
+                <ProfilePage />
 
                 {/* <RegisterForm /> */}
                 {/* <LoginForm />  */}
