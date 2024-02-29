@@ -1,0 +1,22 @@
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #464646;
+    color: #f1eff2;
+    padding: 0.5em 0.8em;
+    border-radius: 0.5em;
+    align-items: center;
+}
+
+.add-icon {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.exercise-name {
+    font-weight: bold;
+}
+
+.exercise-muscle-group {
+    font-size: 14px;
+}

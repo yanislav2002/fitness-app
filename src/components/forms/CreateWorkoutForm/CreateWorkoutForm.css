@@ -2,8 +2,15 @@
     display: flex;
     flex-direction: column;
     gap: 0.8em;
+    max-height: 45em;
+    overflow-y: scroll;
 }
 
-form {
+.create-workout-form {
+    display: flex;
+    flex-direction: column;
     margin: 0;
+    justify-content: flex-start;
 }
+
+  

@@ -4,6 +4,8 @@ import './Filter.css';
 export default function Filter():JSX.Element {
     return(
         <section className='filter'>
+            <h3>Add exercise</h3>
+
             <div className='selects'>
                 <select value='muscle group'>
                     <option value="triceps">triceps</option>

@@ -4,6 +4,10 @@
     gap: 0.5em;
 }
 
+.filter h3 {
+    text-align: center;
+}
+
 .selects {
     display: flex;
     gap: 0.5em;
@@ -24,4 +28,3 @@ select:focus {
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
