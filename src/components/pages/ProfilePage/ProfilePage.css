@@ -22,21 +22,36 @@
     gap: 2em;
 }
 
-.plans {
+.plan-list {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: #373737;
-    min-height: 20em;
-    max-height: 30em;
+    min-height: 22.5em;
+    max-height: 33.5em;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 0.5em;
-    padding: 1em;
+    border-radius:  0 0 0.5em 0.5em;
+    padding: 0.5em;
     gap: 0.5em;
     overflow-y: scroll;
 }
 
-.plans h3 {
-    margin-left: 0.3em;
+.plan-list h3 {
+    margin-left: 0.2em;
+}
+
+.plan-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-container > h2 {
+    text-align: center;
+    width: 100%;
+    background-color: #373737;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px 8px 0 0;
+    border-bottom: #464646 solid 3px;
 }
 
