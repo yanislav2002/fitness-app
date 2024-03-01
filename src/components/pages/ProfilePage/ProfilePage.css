@@ -2,22 +2,41 @@
     display: flex;
     flex-direction: column;
     gap: 2em;
+    color: #f1eff2;
+
+}
+
+.three-dots {
+    width: 1.8em;
+    height: 1.8em;
+    position: absolute;
+    top: 0;
+    right: 10px;
 }
 
 
-.profile-info {
-    display: flex;
-    width: 100%;
-    background-color: #373737;
-    height: 20em;
-    margin-top: 2em;
-    border-radius: 0.5em;
-    padding: 1em;
-}
+
 
 .user-plans {
-    width: 100%;
-    height: 20em;
-    background-color: #373737;
-    border-radius: 0.5em;
+    display: flex;
+    gap: 2em;
 }
+
+.plans {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #373737;
+    min-height: 20em;
+    max-height: 30em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 0.5em;
+    padding: 1em;
+    gap: 0.5em;
+    overflow-y: scroll;
+}
+
+.plans h3 {
+    margin-left: 0.3em;
+}
+
