@@ -1,0 +1,20 @@
+.played-exercise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #373737;
+    color: #f1eff2;
+    width: 40em;
+    border-radius: 0.5em;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.sets-list {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+}
+

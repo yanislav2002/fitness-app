@@ -6,6 +6,7 @@ import LoginForm from './components/forms/LoginForm/LoginForm';
 import HomePage from './components/pages/HomePage/HomePage';
 import CreateWorkoutPage from './components/pages/CreateWorkoutPage/CreateWorkoutPage';
 import ProfilePage from './components/pages/ProfilePage/ProfilePage';
+import PlayedWorkoutPage from './components/pages/PlayedWourkoutPage/PlayedWorkoutPage';
 
 
 export default function App(): JSX.Element {
@@ -17,7 +18,8 @@ export default function App(): JSX.Element {
             <main>
                 {/* <HomePage /> */}
                 {/* <CreateWorkoutPage /> */}
-                <ProfilePage />
+                {/* <ProfilePage /> */}
+                <PlayedWorkoutPage />
 
                 {/* <RegisterForm /> */}
                 {/* <LoginForm />  */}
