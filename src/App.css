@@ -1,7 +1,7 @@
 main {
   width: 1200px;
-  min-height: 83vh;
-  margin: 0 auto;
+  min-height: 76vh;
+  margin: 2em auto;
   display: flex;
   flex-direction: column;
   gap: 2em;

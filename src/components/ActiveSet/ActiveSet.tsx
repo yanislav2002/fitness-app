@@ -1,12 +1,12 @@
-import './ActiveSet.css';
+import ActiveSetCSS from './ActiveSet.module.css';
 
 
 export default function ActiveSet(): JSX.Element {
     return(
-        <div className='active-set'>
-            <div className="set-info-container">
+        <div className={ActiveSetCSS.componentBody}>
+            <div className={ActiveSetCSS.setInfoContainer}>
                 <h5>1.</h5>
-
+ 
                 <div>
                     <h5>10</h5>
                     <h5>Reps</h5>
@@ -18,20 +18,22 @@ export default function ActiveSet(): JSX.Element {
                 </div>
             </div>
 
-            <div className='radio-tile-group'>
-                <div className='input-container'>
-                    <input type="radio" name="a" className='take-away'/>
-                    <div className="radio-tile">
-                        <img src={require('../../icons/test2.png')} className='radio-img' />
+            <div className={ActiveSetCSS.radioTileGroup}>
+
+                <div className={ActiveSetCSS.inputContainer}>
+                    <input type="radio" name="a" className={ActiveSetCSS.takeAway}/>
+                    <div className={ActiveSetCSS.radioTile}>
+                        <img src={require('../../icons/test2.png')} className={ActiveSetCSS.radioImg} />
                     </div>
                 </div>
 
-                <div className='input-container'>
-                    <input type="radio" name="a" className='done'/>
-                    <div className="radio-tile">
-                        <img src={require('../../icons/test1.png')} className='radio-img' />
+                <div className={ActiveSetCSS.inputContainer}>
+                    <input type="radio" name="a" className={ActiveSetCSS.done}/>
+                    <div className={ActiveSetCSS.radioTile}>
+                        <img src={require('../../icons/test1.png')} className={ActiveSetCSS.radioImg} />
                     </div>
                 </div>
+                
             </div>
         </div>
     );

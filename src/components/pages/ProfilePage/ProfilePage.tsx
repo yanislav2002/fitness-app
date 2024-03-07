@@ -1,4 +1,4 @@
-import './ProfilePage.css';
+import ProfilePageCSS from './ProfilePage.module.css';
 import ProfileInfo from '../../ProfileInfo/ProfileInfo';
 import PlanItem from '../../PlanItem/PlanItem';
 import StatisticItem from '../../StatisticItem/StatisticItem';
@@ -6,16 +6,17 @@ import StatisticItem from '../../StatisticItem/StatisticItem';
 
 export default function ProfilePage():JSX.Element {
     return(
-        <div className="profile-page">
+        <>
             <ProfileInfo />
 
-            <section className='user-plans'>
+            <section className={ProfilePageCSS.userItems}>
                 
-                <div className='plan-container'>
+                <section className={ProfilePageCSS.itemSection}>
 
                     <h2>My plans</h2>
-                    <div className="plan-list">
-                        <PlanItem />
+
+                    <div className={ProfilePageCSS.itemList}>
+                        <PlanItem /> 
                         <PlanItem />
                         <PlanItem />
                         <PlanItem />
@@ -25,19 +26,22 @@ export default function ProfilePage():JSX.Element {
                         <PlanItem />
                         <PlanItem />
                     </div>
-                </div>
 
-                <div className='plan-container'>
+                </section>
+
+                <section className={ProfilePageCSS.itemSection}>
 
                     <h2>History</h2>
-                    <div className="plan-list">
+
+                    <div className={ProfilePageCSS.itemList}>
                         <StatisticItem />
                         <StatisticItem />
                         <StatisticItem />
                     </div>
-                </div>
+
+                </section>
 
             </section>
-        </div>
+        </>
     );
 }

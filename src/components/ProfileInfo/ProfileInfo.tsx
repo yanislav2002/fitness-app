@@ -1,16 +1,16 @@
-import './ProfileInfo.css'
+import ProfileInfoCSS from './ProfileInfo.module.css';
 
 
 export default function ProfileInfo():JSX.Element {
     return(
-        <section className="profile-info">
-            <div className="image-container">
+        <section className={ProfileInfoCSS.componentBody}>
+            <div className={ProfileInfoCSS.profileImageContainer}>
                 <img src="https://i1.sndcdn.com/avatars-000276350007-i8sdtr-t500x500.jpg" />
             </div>
 
-            <div className="user-info">
-                <h4 className='profile-name'>Gabe</h4>
-                <h4 className='profile-name'>Newell</h4>
+            <div className={ProfileInfoCSS.userNamesContainer}>
+                <h4>Gabe</h4>
+                <h4>Newell</h4> 
             </div>
 
             <p>fatgaben@gmail.com</p>

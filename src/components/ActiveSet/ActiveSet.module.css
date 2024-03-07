@@ -1,4 +1,4 @@
-.active-set {
+.componentBody {
     display: flex;
     gap: 2em;
     background-color: #707070;
@@ -10,39 +10,38 @@
     justify-content: space-between;
 }
 
-.set-info-container {
-    padding-left: 1em;
+.componentBody h5 {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+.setInfoContainer {
+    padding-left: 1em; 
     display: flex;
     gap: 1.5em;
     align-items: center;
 }
 
-.set-info-container div {
+.setInfoContainer div {
     display: flex;
     gap: 0.5em;
 }
 
-img {
-    max-width: 100px;
-    height: 100px;
-    border-radius: 0.5em;
-}
-
-.radio-tile-group {
+.radioTileGroup {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     border: none;
 }
 
-.input-container {
+.inputContainer {
     position: relative;
     height: 2.5em;
     width: 2.5em;
     margin: 0.5em;
 }
 
-.input-container input {
+.inputContainer input {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -52,39 +51,32 @@ img {
     opacity: 0;
 }
 
-.radio-tile {
-    /* border: 1px solid white; */
+.radioTile {
     background-color: #464646;
-
     border-radius: 0.5em;
     transform: all 300ms ease;
     display: flex;
 }
 
-.take-away:checked + .radio-tile {
+.takeAway:checked + .radioTile {
     background-color: #28231D;
 }
 
-.take-away:hover + .radio-tile {
+.takeAway:hover + .radioTile {
     background-color: #28231D;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.done:checked + .radio-tile {
+.done:checked + .radioTile {
     background-color: #6e1423;
 }
 
-.done:hover + .radio-tile {
+.done:hover + .radioTile {
     background-color: #6e1423;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.radio-img {
+.radioImg {
     height: 2.5em;
     width: 2.5em;
-}
-
-h5 {
-    font-size: 1.3em;
-    font-weight: 300;
 }

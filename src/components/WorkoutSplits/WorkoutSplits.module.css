@@ -1,19 +1,16 @@
-.workout-splits {
+.componentBody {
     display: flex;
     flex-direction: column;
     background-color: #373737;
     width: 100%;
-    margin-top: 2em;
-    color: #f1eff2;
     padding: 1em;
     text-align: center;
     align-items: center;
     border-radius: 0.5em;
-    margin-bottom: 2em;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.asticle-section {
+.articleSection {
     display: flex;
     margin-top: 2em;
     gap: 1em;

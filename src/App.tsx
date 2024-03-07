@@ -13,6 +13,7 @@ import ProfilePage from './components/pages/ProfilePage/ProfilePage';
 import PlayedWorkoutPage from './components/pages/PlayedWourkoutPage/PlayedWorkoutPage';
 import Error404 from './components/Error404/Error404';
 
+
 export default function App(): JSX.Element {
     return (
         <div className="App">
@@ -20,7 +21,7 @@ export default function App(): JSX.Element {
             <Navigation />
 
             <main>
-                <Routes>
+                <Routes> 
                     <Route path={PATHS.home} element={<HomePage />}></Route>
                     <Route path={PATHS.createWorkout} element={<CreateWorkoutPage />}></Route>
                     <Route path={PATHS.profile} element={<ProfilePage />}></Route>

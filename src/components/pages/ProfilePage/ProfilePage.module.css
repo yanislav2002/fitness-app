@@ -1,28 +1,9 @@
-.profile-page {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    color: #f1eff2;
-
-}
-
-.three-dots {
-    width: 1.8em;
-    height: 1.8em;
-    position: absolute;
-    top: 0;
-    right: 10px;
-}
-
-
-
-
-.user-plans {
+.userItems {
     display: flex;
     gap: 2em;
 }
 
-.plan-list {
+.itemList {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -36,17 +17,17 @@
     overflow-y: scroll;
 }
 
-.plan-list h3 {
+.itemList h3 {
     margin-left: 0.2em;
 }
 
-.plan-container {
+.itemSection {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.plan-container > h2 {
+.itemSection > h2 {
     text-align: center;
     width: 100%;
     background-color: #373737;

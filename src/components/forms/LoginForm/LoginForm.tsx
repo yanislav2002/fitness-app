@@ -1,4 +1,3 @@
-import '../Form.css';
 
 
 export default function LoginForm(): JSX.Element {

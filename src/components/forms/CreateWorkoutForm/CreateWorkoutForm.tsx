@@ -1,15 +1,15 @@
-import '../Form.css';
-import './CreateWorkoutForm.css';
+import CreateWorkoutFormCSS from './CreateWorkoutForm.module.css';
+
 import ExerciseCard from "../../ExerciseCard/ExerciseCard";
 
 
-export default function CreateWorkoutForm():JSX.Element {
+export default function CreateWorkoutForm() :JSX.Element {
     return(
-        <form className='create-workout-form'>
+        <form className={CreateWorkoutFormCSS.componentBody}>
             <h2>Ceate Workout</h2>
             <input type="text" placeholder='workout name'/>
 
-            <section className='card-container'>
+            <section className={CreateWorkoutFormCSS.cardContainer}>
                 <ExerciseCard />
                 <ExerciseCard />
             </section>

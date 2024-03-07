@@ -1,4 +1,4 @@
-.plan-item {
+.componentBody {
     display: flex;
     align-items: center;
     padding: 0.5em;
@@ -10,8 +10,8 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     gap: 0.5em;
 }
-
-.play-link-container {
+ 
+.playExerciseContainer {
     width: 3em;
     min-height: 3em;
     position: relative;
@@ -20,7 +20,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.play-link-container img {
+.playExerciseContainer img {
     max-width: 100%;
     top: 50%;
     left: 0;

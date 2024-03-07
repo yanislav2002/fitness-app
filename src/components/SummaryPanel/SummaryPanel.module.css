@@ -1,4 +1,4 @@
-.photo {
+.backgroundPhoto {
     height: 25em;
     width: 100vw;
     position: absolute;
@@ -10,20 +10,20 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
   
-.summary-panel {
+.componentBody {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 25em;
 }
   
-.summary-panel h1 {
+.componentBody h1 {
     position: relative;
     padding-top: 80px;
     padding-bottom: 15px;
 }
   
-.summary-panel p {
+.componentBody p {
     position: relative;
     text-align: center;
     color: #ddd;

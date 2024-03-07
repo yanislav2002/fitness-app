@@ -1,4 +1,3 @@
-import '../Form.css';
 
 
 export default function RegisterForm(): JSX.Element {

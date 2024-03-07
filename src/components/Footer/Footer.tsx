@@ -1,10 +1,10 @@
-import './Footer.css';
+import FooterCSS from './Footer.module.css';
 
 
 export default function Footer():JSX.Element {
     return (
-        <footer>
-
+        <footer className={FooterCSS.componentBody}>
+            
 
         </footer>
     );

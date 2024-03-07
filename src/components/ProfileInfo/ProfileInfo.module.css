@@ -1,11 +1,10 @@
-.profile-info {
+.componentBody {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: #373737;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 20em;
-    margin-top: 2em;
     border-radius: 0.5em;
     padding: 1em;
     align-items: center;
@@ -13,8 +12,8 @@
     justify-content: center;
     position: relative;
 }
-
-.image-container {
+ 
+.profileImageContainer {
     width: 10em;
     height: 10em;
     position: relative;
@@ -23,7 +22,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.image-container img {
+.profileImageContainer img {
     max-width: 100%;
     top: 50%;
     left: 0;
@@ -31,13 +30,13 @@
     position: absolute;
 }
 
-.user-info {
+.userNamesContainer {
     margin: 0.3em;
     display: flex;
     gap: 0.2em;
 }
 
-.profile-name {
+.userNamesContainer h4 {
     font-size: 1.2em;
     font-weight: bold;
 }

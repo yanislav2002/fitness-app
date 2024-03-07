@@ -1,4 +1,4 @@
-.exercise-item {
+.componentBody {
     display: flex;
     justify-content: space-between;
     background-color: #464646;
@@ -9,15 +9,15 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.add-icon {
+.addExercise {
     max-width: 40px;
     max-height: 40px;
 }
 
-.exercise-name {
+.exerciseName {
     font-weight: bold;
 }
 
-.exercise-muscle-group {
+.exerciseMuscleGroup {
     font-size: 14px;
 }

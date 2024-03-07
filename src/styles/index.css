@@ -1,0 +1,27 @@
+@import url('./typography.css');
+@import url('./elements/link.css');
+@import url('./elements/scroll-bar.css');
+@import url('./elements/options.css');
+@import url('./elements/formElements.css');
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: #464646;
+  color: #f1eff2;
+}
+
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+

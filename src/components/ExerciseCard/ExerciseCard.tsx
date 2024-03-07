@@ -1,19 +1,19 @@
-import './ExerciseCard.css'
+import ExerciseCardCSS from './ExerciseCard.module.css';
 
 
 export default function ExerciseCard(): JSX.Element {
     return(
-        <section className='exercise-card'>
+        <section className={ExerciseCardCSS.componentBody}>
             <p>1.</p>
             <img src="https://static.strengthlevel.com/images/illustrations/bench-press-1000x1000.jpg" />
 
-            <div className='exercise-info'>
-                <div>
-                    <p className='exercise-name'>Bench Press</p>
-                    <p className='exercise-muscle-group'>Chest</p>
+            <div className={ExerciseCardCSS.exerciseInfo}>
+                <div> 
+                    <p className={ExerciseCardCSS.exerciseName}>Bench Press</p>
+                    <p className={ExerciseCardCSS.exerciseMuscleGroup}>Chest</p>
                 </div>
 
-                <div className='exercise-sets'>
+                <div className={ExerciseCardCSS.exerciseSets}>
                     <input type="number" />
                     <p>sets</p>
                     <input type="number" />

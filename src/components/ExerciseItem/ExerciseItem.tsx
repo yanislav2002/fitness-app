@@ -1,15 +1,16 @@
-import './ExerciseItem.css'
+import ExerciseItemCSS from './ExerciseItem.module.css';
+
 
 export default function ExerciseItem():JSX.Element {
     return (
-        <div className="exercise-item">
+        <div className={ExerciseItemCSS.componentBody}>
             <div>
-                <p className='exercise-name'>Bench Press</p>
-                <p className='exercise-muscle-group'>Chest</p>
-                <p className='exercise-muscle-group'>Barbell</p>
+                <p className={ExerciseItemCSS.exerciseName}>Bench Press</p>
+                <p className={ExerciseItemCSS.exerciseMuscleGroup}>Chest</p>
+                <p className={ExerciseItemCSS.exerciseMuscleGroup}>Barbell</p>
             </div>
             
-            <a href="#"><img src={require('../../icons/add-icon2.png')} className='add-icon' /></a>
+            <a href="#"><img src={require('../../icons/add-icon2.png')} className={ExerciseItemCSS.addExercise} /></a>
         </div>
     );
 }
