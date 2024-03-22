@@ -5,9 +5,6 @@ import ExerciseItem from '../ExerciseItem/ExerciseItem';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Exercise } from '../../interfaces/Exercise';
-// import { Category } from '../../interfaces/Category';
-// import { MuscleGroup } from '../../interfaces/MuscleGroup';
-
 
 export default function AddExercise():JSX.Element {
     const [exercises, setExercises] = useState<Exercise[]>([]);
