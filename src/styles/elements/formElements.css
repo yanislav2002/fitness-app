@@ -14,8 +14,8 @@ form {
 input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
     padding: 0.5em 0.5em;
     width: 20em;
-    border: none;
     border-radius: 0.5em;
+    border: none;
     background-color: #464646;
     color: #f1eff2;
 }
@@ -25,7 +25,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-input[type='submit']{
+button {
     padding: 0.5em 0.5em;
     border: none;
     width: 10em;
@@ -35,16 +35,25 @@ input[type='submit']{
     font-family: 'Oswald', sans-serif;
 }
 
-input[type='submit']:hover {
+button:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
-input[type='submit']:focus {
+button:focus {
     background: #6e1423;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+button:disabled {
+    background: #6e6e6e; /* New disabled background color */
+    color: #a8a8a8; /* New disabled text color */
+    cursor: not-allowed;
+}
+
 .form-link {
+    color: #ddd;
+}
+
+.form-link:visited {
     color: #ddd;
 }
 
@@ -66,4 +75,40 @@ input[type='submit']{
 
 input[type='submit']:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.offscreen {
+    display: none;
+}
+
+.instructions {
+    width: 20em;
+    border-radius: 0.5em;
+    padding: 0.5em 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: #8a817c;
+    color: #373737;
+    margin-top: -1em;
+}
+
+.instructions img {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.attention-text {
+    font-weight: bold;
+    padding-left: 1.8em;
+}
+
+.attention-text:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.errorMessage {
+    padding: 0.5em 1em;
+    background: #8a817c;
+    border-radius: 0.5em;
+    color: #373737;
 }
