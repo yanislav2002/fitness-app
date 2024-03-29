@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect, SyntheticEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect, SyntheticEvent, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import PATHS from '../../../paths';
-import axios from 'axios';
+import AuthContext from '../../../contexts/authProvider';
 
 interface FormData {
     email: string;
@@ -20,9 +20,10 @@ const FORM_KEYS: FormData = {
 const USERNAME_REGEX = /^[a-zA-Z0-9]{6,22}$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,24}$/;
 const EMAIL_REGEX = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-const REGISTER_URL = 'http://localhost:9009/users/register'
 
 const RegisterForm: React.FC = () => {
+    const { registerSubmitHandler } = useContext(AuthContext);
+
     const emailRef = useRef<HTMLInputElement>(null);
     const errorRef = useRef<HTMLDivElement>(null);
 
@@ -39,9 +40,6 @@ const RegisterForm: React.FC = () => {
     const [isValidRepeatPassword, setIsValidRepeatPassword] = useState<boolean>(false);
 
     const [errorMessage, setErrorMessage] = useState<string>('');
-    const [isSuccess, setIsSuccess] = useState<boolean>(false);
-
-    const navigate = useNavigate();
 
     useEffect(() => {
         emailRef.current!.focus();
@@ -49,22 +47,16 @@ const RegisterForm: React.FC = () => {
 
     useEffect(() => {
         const result = EMAIL_REGEX.test(email);
-        console.log(result);
-        console.log(email);
         setIsValidEmail(result);
     }, [email])
 
     useEffect(() => {
         const result = USERNAME_REGEX.test(username);
-        console.log(result);
-        console.log(username);
         setIsValidUsername(result);
     }, [username])
 
     useEffect(() => {
         const result = PASSWORD_REGEX.test(password);
-        console.log(result);
-        console.log(password);
         setIsValidPassword(result);
         const isMatch = password === repeatPassword;
         setIsValidRepeatPassword(isMatch);
@@ -74,39 +66,25 @@ const RegisterForm: React.FC = () => {
         setErrorMessage('');
     }, [email, username, password, repeatPassword])
 
-    useEffect(() => {
-        const handleSuccess = async () => {
-            if (isSuccess) {
-                navigate(PATHS.home);
-                
-                setEmail('');
-                setUsername('');
-                setPassword('');
-                setRepeatPassword('');
-            }
-        };
-
-        handleSuccess();
-    }, [isSuccess]);
-
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
 
-        console.log(email, username, password);
-
         try {
-            const response = await axios.post(
-                REGISTER_URL,
-                { email, username, password }, 
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true,
-                }
-              );
-
-              setIsSuccess(true);
-        } catch (error) {
-            console.log(error);
+            registerSubmitHandler(email, password, username)
+            setEmail('');
+            setUsername('');
+            setPassword('');
+            setRepeatPassword('');
+        } catch (error: any) {
+            if (!error?.response) {
+                setErrorMessage('No server response.')
+            } else if (error.response.status === 400) {
+                setErrorMessage('Missing email, username or password.')
+            } else if (error.response.status === 401) {
+                setErrorMessage('Unauthorized.')
+            } else {
+                setErrorMessage('Register Failed.')
+            }
         }   
     }
 
@@ -123,6 +101,7 @@ const RegisterForm: React.FC = () => {
                 ref={emailRef}
                 autoComplete='off'
                 onChange={(event) => setEmail(event.target.value)}
+                value={email}
                 required
             />
 
@@ -137,6 +116,7 @@ const RegisterForm: React.FC = () => {
                 id={FORM_KEYS.userName}
                 autoComplete='off'
                 onChange={(event) => setUsername(event.target.value)}
+                value={username}
                 required
             />
 
@@ -152,6 +132,7 @@ const RegisterForm: React.FC = () => {
                 type='password' 
                 id={FORM_KEYS.password}
                 onChange={(event) => setPassword(event.target.value)}
+                value={password}
                 required
             />
 
@@ -168,6 +149,7 @@ const RegisterForm: React.FC = () => {
                 type='password' 
                 id={FORM_KEYS.repeatPassword}
                 onChange={(event) => setRepeatPassword(event.target.value)}
+                value={repeatPassword}
                 required
             />
 
