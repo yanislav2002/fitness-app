@@ -3,6 +3,6 @@ export interface Exercise {
     EXERCISE_NAME: string;
     IMAGE: string;
     DESCRIPTION: string;
-    MUSCLE_NAME: number;
-    CATEGORY_NAME: number;
+    MUSCLE_NAME: string;
+    CATEGORY_NAME: string;
 }
