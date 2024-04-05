@@ -7,8 +7,9 @@ import { useEffect, useState } from 'react';
 import { Exercise } from '../../interfaces/Exercise';
 import { MuscleGroup } from '../../interfaces/MuscleGroup';
 import { Category } from '../../interfaces/Category';
+ 
 
-export default function AddExercise(): JSX.Element {
+const AddExercise: React.FC = () => {
     const [exercises, setExercises] = useState<Exercise[]>([]);
     const [filterExercises, setFilterExercises] = useState<Exercise[]>([]);
     const [searchExercises, setSearchExercises] = useState<Exercise[]>([]);
@@ -31,7 +32,7 @@ export default function AddExercise(): JSX.Element {
                 setMuscleGroup(res.data.muscleGroup);
             } catch (error) {
                 console.log(error);
-            }
+            } 
         };
 
         fetchAllExercises();
@@ -123,3 +124,5 @@ export default function AddExercise(): JSX.Element {
         </aside>
     );
 }
+
+export default AddExercise;

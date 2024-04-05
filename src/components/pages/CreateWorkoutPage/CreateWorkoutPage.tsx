@@ -1,17 +1,22 @@
+import React from 'react';
 import CreateWorkoutPageCSS from './CreateWorkoutPage.module.css';
-
 import CreateWorkoutForm from '../../forms/CreateWorkoutForm/CreateWorkoutForm';
 import AddExercise from '../../AddExercise/AddExercise';
+import { ExerciseProvider } from '../../../contexts/exerciseProvider';
 
 
-export default function CreateWorkoutPage(): JSX.Element {
-    return(
+const CreateWorkoutPage: React.FC = () => {
+    return (
         <div className={CreateWorkoutPageCSS.pageBody}>
+            <ExerciseProvider>
 
-            <CreateWorkoutForm />
+                <CreateWorkoutForm />
 
-            <AddExercise />
-            
+                <AddExercise />
+                
+            </ExerciseProvider>
         </div>
     );
 }
+
+export default CreateWorkoutPage;

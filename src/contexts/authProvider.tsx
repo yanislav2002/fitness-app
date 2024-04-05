@@ -12,13 +12,13 @@ interface AuthContextType {
     email: string;
     isAuth: boolean;
 }
-
+ 
 interface AuthProviderProps {
     children: ReactNode;
 }
 
 const LOGIN_URL = 'http://localhost:9009/users/login';
-const REGISTER_URL = 'http://localhost:9009/users/register';
+const REGISTER_URL = 'http://localhost:9009/users/register'; 
 
 export const AuthContext = createContext<AuthContextType>({
     loginSubmitHandler: async () => {},

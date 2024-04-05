@@ -1,8 +1,13 @@
 import ExerciseItemCSS from './ExerciseItem.module.css';
 import { Exercise } from '../../interfaces/Exercise';
+import { useExerciseContext } from '../../contexts/exerciseProvider';
 
+const ExerciseItem: React.FC<Exercise> = ({ ...props }) => {
+    const { handleAddExercise } = useExerciseContext();
 
-export default function ExerciseItem(props: Exercise):JSX.Element {
+    const handleClick = () => {
+        handleAddExercise(props);
+    };
 
     return (
         <div className={ExerciseItemCSS.componentBody}>
@@ -12,7 +17,11 @@ export default function ExerciseItem(props: Exercise):JSX.Element {
                 <p className={ExerciseItemCSS.exerciseMuscleGroup}>{props.CATEGORY_NAME}</p>
             </div>
             
-            <a href="#"><img src={require('../../icons/add-icon2.png')} className={ExerciseItemCSS.addExercise}/></a>
+            <a href="#" onClick={handleClick}>
+                <img src={require('../../icons/add-icon2.png')} className={ExerciseItemCSS.addExercise} />
+            </a>
         </div>
     );
 }
+
+export default ExerciseItem;
