@@ -15,7 +15,7 @@ const FORM_KEYS: FormData = {
 };
 
 const LoginForm: React.FC = () => {
-    const { loginSubmitHandler } = useContext(AuthContext);
+    const { loginSubmitHandler, userId } = useContext(AuthContext);
 
     const emailRef = useRef<HTMLInputElement>(null);
     const errorRef = useRef<HTMLParagraphElement>(null); 

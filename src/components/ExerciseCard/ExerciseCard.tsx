@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ExerciseCardCSS from './ExerciseCard.module.css';
 import { useExerciseContext } from '../../contexts/exerciseProvider';
+import { Exercise } from '../../interfaces/Exercise';
 
 interface ExerciseCardProps {
     index: number;
 }
 
 const ExerciseCard: React.FC<ExerciseCardProps> = ({ index }) => {
-    const { currentExerciseArray, setCurrentExerciseArray } = useExerciseContext();
+    const { exercises, currentExerciseArray, setCurrentExerciseArray } = useExerciseContext();
+
+    const [newExercise, setNewExercise] = useState<Exercise>({
+        ID: 0,
+        EXERCISE_NAME: '',
+        IMAGE: '',
+        DESCRIPTION: '',
+        MUSCLE_NAME: '',
+        CATEGORY_NAME: '',
+    });
+
     const exercise = currentExerciseArray[index]; 
     
     const handleSetsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,17 +47,21 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({ index }) => {
             return newArray;
         });
     };
+
+    useEffect(()=> {
+        setNewExercise(exercises.find(ex => ex.ID === exercise.EXERCISE_INFO_ID)!)
+    }, [exercise]);
     
     return (
         <section className={ExerciseCardCSS.componentBody}>
             <p>{index + 1}</p>
-            {/* <img src={exercise.IMAGE} alt={exercise.EXERCISE_NAME} /> */}
+            <img src={newExercise.IMAGE} alt={newExercise.EXERCISE_NAME} />
 
             <div className={ExerciseCardCSS.exerciseInfo}>
 
                 <div>
-                    {/* <p className={ExerciseCardCSS.exerciseName}>{exercise.EXERCISE_NAME}</p>
-                    <p className={ExerciseCardCSS.exerciseMuscleGroup}>{exercise.MUSCLE_NAME}</p> */}
+                    <p className={ExerciseCardCSS.exerciseName}>{newExercise.EXERCISE_NAME}</p>
+                    <p className={ExerciseCardCSS.exerciseMuscleGroup}>{newExercise.MUSCLE_NAME}</p>
                 </div>
 
                 <div className={ExerciseCardCSS.exerciseSets}>

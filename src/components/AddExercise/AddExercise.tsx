@@ -7,36 +7,17 @@ import { useEffect, useState } from 'react';
 import { Exercise } from '../../interfaces/Exercise';
 import { MuscleGroup } from '../../interfaces/MuscleGroup';
 import { Category } from '../../interfaces/Category';
+import { useExerciseContext } from '../../contexts/exerciseProvider';
  
 
 const AddExercise: React.FC = () => {
-    const [exercises, setExercises] = useState<Exercise[]>([]);
+    const { exercises, category, muscleGroup } = useExerciseContext();
+
     const [filterExercises, setFilterExercises] = useState<Exercise[]>([]);
     const [searchExercises, setSearchExercises] = useState<Exercise[]>([]);
-
-    const [category, setCategory] = useState<Category[]>([]);
-    const [searchCategory, setSearchCategory] = useState<string>('');
-
-    const [muscleGroup, setMuscleGroup] = useState<MuscleGroup[]>([]);
-    const [searchMuscleGroup, setSearchMuscleGroup] = useState<string>('');
-
     const [searchExerciseName, setSearchExerciseName] = useState<string>('');
-
-    useEffect(() => {
-        const fetchAllExercises = async () => {
-            try {
-                const res = await axios.get('http://localhost:9009/create-workout');
-
-                setExercises(res.data.exercises);
-                setCategory(res.data.category);
-                setMuscleGroup(res.data.muscleGroup);
-            } catch (error) {
-                console.log(error);
-            } 
-        };
-
-        fetchAllExercises();
-    }, []);
+    const [searchCategory, setSearchCategory] = useState<string>('');
+    const [searchMuscleGroup, setSearchMuscleGroup] = useState<string>('');
 
     useEffect(() => {
         setFilterExercises(exercises);

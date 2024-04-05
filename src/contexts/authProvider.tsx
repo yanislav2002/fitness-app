@@ -10,6 +10,7 @@ interface AuthContextType {
     logoutHandler: () => void;
     name: string;
     email: string;
+    userId: string, 
     isAuth: boolean;
 }
  
@@ -25,7 +26,8 @@ export const AuthContext = createContext<AuthContextType>({
     registerSubmitHandler: async () => {},
     logoutHandler: () => {},
     name: '',
-    email: '',
+    email: '', 
+    userId: '', 
     isAuth: false,
 });
 
@@ -39,6 +41,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     useEffect(() => {
         setIsAuth(!!localStorage.getItem(accessTokenKey));
+
+
     }, [auth]);
 
     const loginSubmitHandler = async (email: string, password: string) => {
@@ -52,6 +56,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         );
 
         setAuth(result.data);
+
         localStorage.setItem(accessTokenKey, result.data.accessToken);
         navigate(PATHS.home);
     };
@@ -81,8 +86,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         loginSubmitHandler,
         registerSubmitHandler,
         logoutHandler,
-        name: auth.username,
-        email: auth.email,
+        name: auth.user?.USER_NAME, 
+        email: auth.user?.EMAIL, 
+        userId: auth.user?.ID, 
         isAuth,
     };
 
