@@ -71,9 +71,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             }
         );
 
-        setAuth(result.data);
-        localStorage.setItem(accessTokenKey, result.data.accessToken);
-        navigate(PATHS.home);
+        await loginSubmitHandler(email, password);
     };
 
     const logoutHandler = () => {

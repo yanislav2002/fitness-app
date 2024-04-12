@@ -5,7 +5,9 @@ import { useExerciseContext } from '../../contexts/exerciseProvider';
 const ExerciseItem: React.FC<Exercise> = ({ ...props }) => {
     const { handleAddExercise } = useExerciseContext();
 
-    const handleClick = () => {
+    const handleClick = (e: any) => {
+        e.preventDefault();
+
         handleAddExercise(props);
     };
 

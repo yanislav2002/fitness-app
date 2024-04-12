@@ -27,3 +27,11 @@
     transform: translateY(-50%);
     position: absolute;
 }
+
+.innerContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 0.7em;
+    align-items: center;
+}

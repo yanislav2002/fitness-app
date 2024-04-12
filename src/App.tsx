@@ -13,6 +13,7 @@ import ProfilePage from './components/pages/ProfilePage/ProfilePage';
 import PlayedWorkoutPage from './components/pages/PlayedWourkoutPage/PlayedWorkoutPage';
 import Error404 from './components/Error404/Error404';
 import Logout from './components/Logout/Logout';
+import UserDetailsForm from './components/forms/UserDetailsForm/UserDetailsForm';
 
 
 export default function App(): JSX.Element {
@@ -26,8 +27,9 @@ export default function App(): JSX.Element {
                     <Route path={PATHS.home} element={<HomePage />}></Route>
                     <Route path={PATHS.createWorkout} element={<CreateWorkoutPage />}></Route>
                     <Route path={PATHS.profile} element={<ProfilePage />}></Route>
-                    <Route path={PATHS.playedWorkout} element={<PlayedWorkoutPage />}></Route>
+                    <Route path={`${PATHS.playedWorkout}/:id`} element={<PlayedWorkoutPage />}></Route>
                     <Route path={PATHS.error404} element={<Error404 />}></Route>
+                    <Route path={`${PATHS.userDetails}/:id`} element={<UserDetailsForm/>}></Route>
 
                     <Route path={PATHS.register} element={<RegisterForm />}></Route>
                     <Route path={PATHS.login} element={<LoginForm />}></Route>

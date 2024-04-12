@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import SummaryPanelCSS from './SummaryPanel.module.css';
+import PATHS from '../../paths';
 
 
 export default function SummaryPanel(): JSX.Element {
@@ -9,11 +11,11 @@ export default function SummaryPanel(): JSX.Element {
             
             <h1>Create Workout Plan</h1>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ullam ducimus eligendi incidunt odit non debitis, suscipit veritatis dolorum illo dolore!
+            <p>Transform your body with expert guidance. Join our fitness community today for personalized workouts and nutrition plans!
             </p>
 
-            <p><a href="#" className='link'>Create Plan</a></p>
+            <p><Link to={PATHS.createWorkout} className='link'>Create Workout</Link></p>
+            
           
         </section>  
     )

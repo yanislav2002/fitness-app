@@ -16,6 +16,12 @@
     gap: 1em;
 }
 
+.image {
+    width: 80%;
+    height: 10em;
+    border-radius: 0.5em;
+}
+
 article { 
     background-color: #707070;
     border-radius: 0.5em;
