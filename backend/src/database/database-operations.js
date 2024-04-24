@@ -1,5 +1,6 @@
 import oracledb from "oracledb"; 
 
+
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
 oracledb.initOracleClient();
 
@@ -20,12 +21,32 @@ export async function getData(query) {
     } catch (error) {
         console.log(error);
     }
-}
+} 
 
 export async function postData(query, values) {
     try{
         const data = await connection.execute(query, values);
-    
+        await connection.commit();
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function deleteData(query) {
+    try {
+        const data = await connection.execute(query);
+        await connection.commit();
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function updateData(query, values) {
+    try {
+        const data = await connection.execute(query, values);
+        await connection.commit();
         return data;
     } catch (error) {
         console.log(error);

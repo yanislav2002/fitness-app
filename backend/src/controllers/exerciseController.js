@@ -11,33 +11,82 @@ router.get('/', async (req, res) => {
         JOIN category ON exercise_info.CATEGORY_ID = category.ID
         JOIN muscle_group ON exercise_info.MUSCLE_GROUP_ID = muscle_group.ID
     `;
-
+ 
     const exercises = await getData(query);
-    console.log(exercises);
-    res.json(exercises);
+
+    const categoryQuery = `
+        SELECT * 
+        FROM category
+    `;
+
+    const category = await getData(categoryQuery);
+
+    const muscleGroupQuery = `
+        SELECT * 
+        FROM muscle_group
+    `;
+
+    const muscleGroup = await getData(muscleGroupQuery);
+
+    res.json({exercises: exercises, category: category, muscleGroup: muscleGroup});
 });
 
-router.post('/', async (req, res) => {
-    const query = 'INSERT INTO exercise_info VALUES (:id, :exercise_name, :image, :description, :muscle_group_id, :category_id)';
+router.get('/plan', async (req, res) => {
+    const query = `
+        SELECT *
+        FROM plan
+    `;
 
-    const values = {
-        id: null,
-        exercise_name: { val: 'testexname2' },
-        image: { val: 'testimg2' },
-        description: { val: null },
-        muscle_group_id: { val: 2 },
-        category_id: { val: 2 }
+    const plan = await getData(query);
+
+    res.json(plan)
+});
+
+router.post('/plan', async (req, res) => {
+
+    const { planName, userId } = req.body;
+    
+    const planQuery = 'INSERT INTO plan VALUES (:id, :plan_name, :user_id)';
+
+    const planValues = {
+        id: { val: null },
+        plan_name: { val: planName },
+        user_id: { val: userId },
     };
 
     try {
-        const result = await postData(query, values);
-        res.json(result);
-        console.log(result);
+        const plan = await postData(planQuery, planValues);
+        return res.json(plan);
 
     } catch (error) {
-        res.json({ error });
-        console.log(error);
+        res.status(500).json( 'Error inserting user data');
     }
 });
 
+router.post('/current-exercise', async (req, res) => {
+    const { currentExerciseArray, planId } = req.body;
+    const currentExerciseQuery = 'INSERT INTO curr_exercise VALUES (:id, :sets, :reps, :weigth, :plan_id, :exercise_info_id)';
+    
+    try {
+        let plan;
+
+        for (const currExercise of currentExerciseArray) {
+            const currentExerciseValues = {
+                id: { val: null },
+                sets: { val: currExercise.SETS },
+                reps: { val: currExercise.REPS },
+                weigth: { val: currExercise.WEIGTH },
+                plan_id: { val: planId },
+                exercise_info_id: { val: currExercise.EXERCISE_INFO_ID },
+            };
+
+            plan = await postData(currentExerciseQuery, currentExerciseValues);
+        }
+
+        return res.json(plan);
+    } catch (error) {
+        console.error('Error inserting current exercise data:', error);
+        return res.status(500).json('Error inserting current exercise data');
+    }
+});
 export default router;
