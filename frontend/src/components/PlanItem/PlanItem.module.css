@@ -1,0 +1,37 @@
+.componentBody {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    padding-left: 1em;
+    min-height: 5em;
+    background-color: #707070;
+    position: relative;
+    border-radius: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    gap: 0.5em;
+}
+ 
+.playExerciseContainer {
+    width: 3em;
+    min-height: 3em;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.playExerciseContainer img {
+    max-width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.innerContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 0.7em;
+    align-items: center;
+}

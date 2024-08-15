@@ -1,0 +1,43 @@
+.componentBody {
+    background-color: #707070;
+    display: flex;
+    width: 25em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    gap: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.componentBody img {
+    max-width: 100px;
+    height: 100px;
+    border-radius: 0.5em;
+}
+
+.exerciseInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.exerciseInfo >* :first-child {
+    align-self: center;
+}
+
+.exerciseSets {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.exerciseSets input {
+    max-width: 3em;
+}
+
+.exerciseMuscleGroup {
+    font-size: 14px;
+}
+
+.exerciseName {
+    font-weight: bold;
+}

@@ -1,0 +1,23 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #373737;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2em;
+    border-radius: 0.5em;
+    gap: 1em;
+}
+
+.exerciseList {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    min-height: 28em;
+    max-height: 45em;
+    background-color: #707070;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    gap: 0.5em;
+    overflow-y: scroll;
+}
+
